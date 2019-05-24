@@ -1,7 +1,5 @@
-<form [formGroup] = "signupForm" (ngSubmit) = "onSubmit()">
-  <input type="text"
-  id="fruitItem"
-  formControlName="fruitItem">
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <input type="text" id="fruitItem" formControlName="fruitItem">
   <input type="submit" value="Submit">
 </form>
 <ul>

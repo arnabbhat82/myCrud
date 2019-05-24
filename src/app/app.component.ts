@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -6,20 +6,22 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  fruits = ['Oranges', 'Apples', 'kiwi', 'banana'];
+export class AppComponent {
+  fruits: string[];
   signupForm: FormGroup;
 
- deleteItem(i: number){
-   this.fruits.splice(i,1);
- }
- 
- ngOnInit(){
-   this.signupForm = new FormGroup({
-     'fruitItem': new FormControl(null)
-   });
- }
- onSubmit(){
-  console.log(this.signupForm.value);
-}
+  constructor() {
+    this.fruits = ['Oranges', 'Apples', 'kiwi', 'banana'];
+    this.signupForm = new FormGroup({
+      fruitItem: new FormControl(null)
+    });
+  }
+
+  onSubmit() {
+    console.log(this.signupForm.get('fruitItem').value);
+  }
+
+  deleteItem(i: number) {
+    this.fruits.splice(i, 1);
+  }
 }
