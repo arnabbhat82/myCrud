@@ -17,8 +17,12 @@ export class AppComponent {
     });
   }
 
+  get fruitItem() {
+    return this.signupForm.get('fruitItem');
+  }
+
   onSubmit() {
-    console.log(this.signupForm.get('fruitItem').value);
+    console.log(this.fruitItem.value);
   }
 
   deleteItem(i: number) {
