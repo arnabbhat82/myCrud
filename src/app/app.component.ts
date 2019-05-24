@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'myCrud';
+  fruits: string[];
+  signupForm: FormGroup;
+
+  constructor() {
+    this.fruits = ['Oranges', 'Apples', 'kiwi', 'banana'];
+    this.signupForm = new FormGroup({
+      fruitItem: new FormControl(null)
+    });
+  }
+
+  onSubmit() {
+    console.log(this.signupForm.get('fruitItem').value);
+  }
+
+  deleteItem(i: number) {
+    this.fruits.splice(i, 1);
+  }
 }
