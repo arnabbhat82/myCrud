@@ -12,6 +12,7 @@ export class AppComponent {
 
   constructor() {
     this.fruits = ['Oranges', 'Apples', 'kiwi', 'banana'];
+    
     this.signupForm = new FormGroup({
       fruitItem: new FormControl(null)
     });
@@ -23,9 +24,16 @@ export class AppComponent {
 
   onSubmit() {
     console.log(this.fruitItem.value);
+    this.fruits.push(this.fruitItem.value);
   }
 
   deleteItem(i: number) {
     this.fruits.splice(i, 1);
+  }
+  editFruitName(i: number) {
+    // console.log();
+    //console.log(this.fruits.valueOf());
+    console.log(this.fruits[i]);
+    
   }
 }
