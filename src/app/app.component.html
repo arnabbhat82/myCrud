@@ -4,6 +4,6 @@
 </form>
 <ul>
   <li *ngFor="let friutname of fruits;index as i">
-    {{friutname}} <Button (click)= deleteItem(i);>DELETE</Button> <button>Edit</button>
+    {{friutname}} <Button (click)= deleteItem(i);>DELETE</Button> <button (click) = editFruitName(i)>Edit</button>
   </li>
 </ul>
