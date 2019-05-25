@@ -30,10 +30,10 @@ export class AppComponent {
   deleteItem(i: number) {
     this.fruits.splice(i, 1);
   }
+
   editFruitName(i: number) {
     // console.log();
     //console.log(this.fruits.valueOf());
-    console.log(this.fruits[i]);
-    
+    console.log(this.fruits[i]);    
   }
 }
