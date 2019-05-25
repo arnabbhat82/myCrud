@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
+import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   fruits: string[];
@@ -12,7 +12,7 @@ export class AppComponent {
   editFruitIndex: number;
 
   constructor() {
-    this.fruits = ["Oranges", "Apples", "kiwi", "banana"];
+    this.fruits = ['Oranges', 'Apples', 'kiwi', 'banana'];
     this.signupForm = new FormGroup({
       fruitItem: new FormControl(null)
     });
@@ -31,7 +31,6 @@ export class AppComponent {
       // update
       // this.fruits.(this.fruitItem.value);
       this.fruits[this.editFruitIndex] = this.fruitItem.value;
-
     }
   }
 
