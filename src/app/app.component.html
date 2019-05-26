@@ -1,9 +1,13 @@
-<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+<!-- <form [formGroup]="myForm" (ngSubmit)="onSubmit();">
   <input type="text" id="fruitItem" formControlName="fruitItem">
-  <input type="submit" value="Submit">
+  <input type="submit" [value]="fruitIndex === -1 ?  'Add' : 'Update'">
 </form>
 <ul>
   <li *ngFor="let fruitname of fruits;index as i">
-    {{fruitname}}<Button (click)=deleteItem(i);>Delete</Button>
+    {{fruitname}}
+    <button (click)="deleteFruitName(i);">Delete</button>
+    <button (click)="editFruitName(i);">Edit Fruit name</button>
   </li>
-</ul>
+</ul> -->
+
+<app-object-form></app-object-form>
