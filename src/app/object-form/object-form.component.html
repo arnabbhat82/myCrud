@@ -1,0 +1,23 @@
+<form [formGroup]="objectForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="item1">item1</label>
+    <input type="text" name="item1" formControlName="item1" autofocus>
+  </div>
+  <div>
+    <label for="item2">item2</label>
+    <input type="text" name="item2" formControlName="item2">
+  </div>
+  <div>
+    <label for="item3">item3</label>
+    <input type="text" name="item3" formControlName="item3">
+  </div>
+  <div>
+    <label for="item4">item4</label>
+    <input type="text" name="item4" formControlName="item4">
+  </div>
+  <input type="submit" value="Submit">
+</form>
+
+<div *ngFor="let object of objectArr">
+    {{ object.item1 }}, {{ object.item2 }}, {{ object.item3 }}, {{ object.item4 }}
+</div>
